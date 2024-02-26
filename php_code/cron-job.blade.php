@@ -1,30 +1,27 @@
 
 ********************* Cron Job In Laravel ***********************************
 
-1. Write Command In Terminal : php artisan make:command DemoCron --command=demo:cron
+1. Write Command In Terminal : php artisan make:command InActiveUser --command=demo:cron
 
 
-2. In app/Console/Commands/DemoCron.php
+2. In app/Console/Commands/InActiveUser.php
 <?php
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Mail;
-use App\Models\Form;
-use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Queue\SerializesModels;
+use DB;
 
-class DemoCron extends Command
+
+class InActiveUser extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'demo:cron';
+    protected $signature = 'inactive:user';
 
     /**
      * The console command description.
@@ -38,19 +35,20 @@ class DemoCron extends Command
      */
     public function handle()
     {
+        //
         \Log::info("Cron Is Working Fine");
 
-        $data = Form::count();
+        $data['userCount'] = DB::table('users')->count();
+        $email = 'harshit@pearlorganisation.com';
+        $subject = 'Testing Purpose Mail';
 
-        Mail::send('mail', ['data' => $data] , function($message){
-            $message->to('sagar@pearlorganisation.com')
-            ->subject('Toal User From Harshit Side');
 
+        Mail::send('admin.mail.cron-job', $data, function($message) use ($subject, $email) {
+            $message->to($email);
+            $message->subject($subject);
         });
-        
+    }
 }
-}
-
 
 
 
@@ -70,13 +68,16 @@ class Kernel extends ConsoleKernel
      * Define the application's command schedule.
      */
 
-    protected $commands = [
-        Commands\DemoCron::class,
+     
+     protected $commands = [
+        \App\Console\Commands\InActiveUser::class,
     ];
+
+
 
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('demo:cron')->everyMinute();
+        $schedule->command('inactive:user')->everyMinute();
     }
 
     /**
@@ -91,8 +92,8 @@ class Kernel extends ConsoleKernel
 }
 
 
+4. Clear Or optimize Website
 
+5. Run In Terminal : php artisan schedule:run
 
-4. Run In Terminal : php artisan schedule:run
-
-5. Check Your Command Run Or Not In Log File : storage/logs/laravel.php
+6. Check Your Command Run Or Not In Log File : storage/logs/laravel.php

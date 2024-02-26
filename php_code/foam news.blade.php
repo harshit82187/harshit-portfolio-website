@@ -370,6 +370,17 @@
 	    	input.value = input.value.slice(0, 10);
 		}
 
+		document.getElementById('resume').addEventListener('change', function() {
+        var file = this.files[0];
+        var allowedTypes = ['image/jpeg', 'image/jpg', 'application/pdf'];
+
+        // Check if the selected file's type is allowed
+        if (!allowedTypes.includes(file.type)) {
+            alert('Please upload only JPEG/JPG or PDF files.');
+            this.value = ''; // Clear the file input
+        }
+    });
+
        
 </script>
 

@@ -666,6 +666,7 @@ class ForgotPasswordController extends Controller
 
 
 ////////////////// Add Password And Confirm PAssword Fields ////////////////////////////
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>

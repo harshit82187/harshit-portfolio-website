@@ -1022,10 +1022,10 @@ min-height for projects div
   opacity: 1;
 }
 .cbh-ph-circle {
-  width: 110px;
-  height: 110px;
-  top: 40px;
-  left: 40px;
+width: 90px;
+height: 90px;
+top: 50px;
+left: 50px;
   position: absolute;
   background-color: transparent;
   -webkit-border-radius: 100%;

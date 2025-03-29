@@ -103,3 +103,15 @@
         });
 	
 })(jQuery);
+
+
+document.getElementById("seeMoreBtn").addEventListener("click", function() {
+	var content = document.getElementById("hiddenContent");
+	if (content.style.display === "none") {
+		content.style.display = "block";
+		this.innerText = "See Less";
+	} else {
+		content.style.display = "none";
+		this.innerText = "See More";
+	}
+});

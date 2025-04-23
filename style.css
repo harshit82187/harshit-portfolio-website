@@ -6,7 +6,8 @@
     IMPORT FONTS
 -------------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
 
 /*------------------------------------------------------------------
     IMPORT FILES
@@ -22,15 +23,19 @@
     SKELETON
 -------------------------------------------------------------------*/
 
+
 #home {
   background-image: url('images/banner-03.jpg');
 }
 
 body {
-  color: black;
+  /* color: black; */
   font-size: 17px;
-  text-align: justify;
-  font-family: 'Roboto Mono', monospace;
+  /* text-align: justify; */
+  /* font-family: 'Roboto Mono', monospace; */
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-style: normal;
+  font-optical-sizing: auto;
   line-height: 1.80857;
 }
 
@@ -323,7 +328,7 @@ xclip
 }
 
 .section-title h3 {
-  font-size: 38px;
+  font-size: 45px;
   font-weight: 500;
   line-height: 62px;
   margin: 0 0 25px;
@@ -449,7 +454,7 @@ xclip
 }
 
 .message-box h2 {
-  font-size: 38px;
+  font-size: 45px;
   font-weight: 300;
   padding: 0 0 10px;
   margin: 0;
@@ -826,6 +831,14 @@ xclip
   animation: rotate 3s ease-in-out infinite;
   transform: rotate(-200deg);
 }
+.message-box ul li a {
+  background-color: #333333;
+  color: #ffff;
+  padding: 11px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
 @keyframes rotate {
   0% {
     border-width: 10px;
@@ -885,12 +898,7 @@ min-height for projects div
     padding: 10px 20px;
     border-radius: 20px;
   }
-  .message-box ul li a {
-    background-color: #333333;
-    color: #ffff;
-    padding: 10px 15px;
-    border-radius: 10px;
-  }
+ 
 } /*@media only screen and (min-width:991px)*/
 
 @media only screen and (max-width: 768px) {
@@ -902,12 +910,6 @@ min-height for projects div
     border-radius: 20px;
   }
 
-  .message-box ul li a {
-    background-color: #333333;
-    color: #ffff;
-    padding: 5px 10px;
-    border-radius: 10px;
-  }
 }
 
 .contact_ul li strong,
@@ -1022,10 +1024,10 @@ min-height for projects div
   opacity: 1;
 }
 .cbh-ph-circle {
-width: 90px;
-height: 90px;
-top: 50px;
-left: 50px;
+  width: 110px;
+  height: 110px;
+  top: 40px;
+  left: 40px;
   position: absolute;
   background-color: transparent;
   -webkit-border-radius: 100%;
@@ -1455,10 +1457,72 @@ left: 50px;
 #scroll-to-top {
   z-index: 999;
 }
+.main_offers {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.offers_content {
+  max-width: 250px;
+  width: 100%;
+  box-shadow: 2px 2px 17px #c7a7f1;
+  padding: 15px;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  transition: 0.8s;
+  height: 250px;
+}
+.offers_content img {
+  border-radius: 50%;
+  max-width: 150px;
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background-color: #d6d6d6;
+  margin-bottom: 25px;
+}
+ .offers_content h5 {
+  font-size: 18px;
+  color: #1b1c1d;
+  font-weight: 500;
+  line-height: 24px !important;
+ }
+.offers_content:hover {
+  transform: scale(1.1);
+  transition: 0.7s;
+}
+th {
+  border: 0;
+}
+.social_contact li {
+  padding: 0;
+}
 
+.social_contact li i {
+  margin: 0;
+  padding: 10px 15px;
+}
 @media screen and (max-width: 767px) {
   .main-banner {
     background-size: unset !important;
   }
+  
+}
+@media screen and (max-width: 767px) {
+  ._ad_main_conflict {
+    background-size: cover !important;
+  }
+  
 }
 /* Whatapp icons css  */
+
+.logo-name {
+  font-size: 30px;
+  font-weight: 900;
+  }
+  ::selection {
+  color: #ffff;
+  background: maroon;
+  }
+  .logo-name{font-size:30px;font-weight:900;}
